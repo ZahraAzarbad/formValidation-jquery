@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" dir="rtl" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body
+    class="w-screen h-screen flex justify-between bg-blue-600 p-10 gap-24 items-start"
+    dir="rtl"
+  >
+    <section class="bg-white flex-1 rounded-md overflow-hidden">
+      <header class="w-full h-[70px] bg-slate-100 flex items-center px-8">
+        <p class="text-indigo-500 text-2xl">حساب کاربری</p>
+      </header>
+
+      <div class="px-8 py-5">
+        <form class="flex flex-col gap-5 justify-between items-center">
+          <div class="w-full flex flex-col gap-2">
+            <label for="username" class="mr-1 text-lg font-thin text-slate-700"
+              >نام</label
+            >
+            <input
+              class="w-full h-[40px] border border-slate-300 focus:border-slate-400 outline-none rounded-md px-2 text-slate-700 valid:border-green-600"
+              type="text"
+              name="username"
+              required
+            />
+            <small class="text-red-500 mr-3"></small>
+          </div>
+          <div class="w-full flex flex-col gap-2">
+            <label for="lastname" class="mr-1 text-lg font-thin text-slate-700"
+              >نام خانوادگی</label
+            >
+            <input
+              class="w-full h-[40px] border border-slate-300 focus:border-slate-400 outline-none rounded-md px-2 text-slate-700 valid:border-green-600"
+              type="text"
+              name="lastname"
+              required
+            />
+            <small class="text-red-500 mr-3"></small>
+          </div>
+          <div class="w-full flex flex-col gap-2">
+            <label for="email" class="mr-1 text-lg font-thin text-slate-700"
+              >ایمیل</label
+            >
+            <input
+              dir="ltr"
+              class="w-full h-[40px] border border-slate-300 focus:border-slate-400 outline-none rounded-md px-2 text-slate-700 valid:border-green-600"
+              type="email"
+              name="email"
+              required
+            />
+            <small class="text-red-500 mr-3"></small>
+          </div>
+          <div class="w-full flex flex-col gap-2">
+            <label
+              for="phoneNumber"
+              class="mr-1 text-lg font-thin text-slate-700"
+              >شماره تلفن</label
+            >
+            <input
+              dir="ltr"
+              class="w-full h-[40px] border border-slate-300 focus:border-slate-400 outline-none rounded-md px-2 text-slate-700 valid:border-green-600"
+              maxlength="11"
+              minlength="11"
+              type="tel"
+              name="phoneNumber"
+              required
+            />
+            <small class="text-red-500 mr-3"></small>
+          </div>
+
+          <input
+            class="w-full h-[40px] bg-indigo-600 text-white text-lg hover:bg-transparent hover:border hover:border-indigo-600 hover:text-slate-800 rounded-md transition-all duration-200"
+            type="submit"
+            value="عضویت"
+          />
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="bg-white flex-1 rounded-md px-6 py-4 flex flex-col items-center gap-4">
+      
+      
+      <table class="w-full">
+        <thead>
+          <tr class="py-4 text-slate-700 text-sm border-t border-b">
+            <th scope="col" class="text-center">حذف</th>
+            <th scope="col" class="text-center">ویرایش</th>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col" class="text-center">نام</th>
+            <th scope="col" class="text-center">نام خانوادگی</th>
+            <th scope="col" class="text-center">ایمیل</th>
+            <th scope="col" class="text-center">تلفن</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr class="text-center text-sm [&>*]:py-3">
+            <td class="delete"><i class="bi bi-x"></i></td>
+            <td class="edit">
+              <i class="bi bi-pencil-square"></i>
+            </td>
+            <td>1</td>
+            <td class="name">سینا</td>
+            <td class="family">کامروا</td>
+            <td class="email">sian@gmail.com</td>
+            <td class="phone">09216343118</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <header class="w-full flex justify-between border-t border-b py-1 px-2 gap-10 text-center">
+      <p class="text-sm text-slate-600 font-bold">
+        حذف
+      </p>
+      <p class="text-sm text-slate-600 font-bold">
+        ویرایش
+      </p>
+      <p class="text-sm text-slate-600 font-bold">
+        #
+      </p>
+      <p class="text-sm text-slate-600 font-bold">
+        نام
+      </p>
+      <p class="text-sm text-slate-600 font-bold">
+        نام خانوادگی
+      </p>
+      <p class="text-sm text-slate-600 font-bold flex-1">
+        ایمیل
+      </p>
+      <p class="text-sm text-slate-600 font-bold ">
+        شماره تلفن
+      </p>
+      
+    </header>
+
+    <div id="cards-wrapper" class="w-full">
+      <div id="card" class="flex justify-between gap-5 text-center">
+          <span id="delete">
+            <i class="bi bi-x"></i>
+          </span>
+          <span id="edit">
+            <i class="bi bi-pencil-square"></i>
+          </span>
+
+          <p class="flex-1">1</p>
+          <p class='flex-1'>سینا</p>
+          <p class="flex-1">کامروا</p>
+          <p class="flex-1">sian@gmail.com</p>
+          <p class="flex-1">0921634321</p>
+
+      </div>
+    </div> -->
+    </section>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

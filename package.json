@@ -1,0 +1,26 @@
+{
+  "name": "formvalidation-jquery",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000f\u0000o\u0000r\u0000m\u0000V\u0000a\u0000l\u0000i\u0000d\u0000a\u0000t\u0000i\u0000o\u0000n\u0000-\u0000j\u0000q\u0000u\u0000e\u0000r\u0000y\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-in": "npx tailwindcss -i ./src/style.css -o ./dist/css/main.css --watch "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZahraAzarbad/formValidation-jquery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZahraAzarbad/formValidation-jquery/issues"
+  },
+  "homepage": "https://github.com/ZahraAzarbad/formValidation-jquery#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+}
